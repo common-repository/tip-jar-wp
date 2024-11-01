@@ -1,0 +1,1222 @@
+/* Prevent the zoom weirness on iphones */
+@media only screen and (max-width: 600px) {
+	.tip-jar-wp-element * input[type="color"],
+	.tip-jar-wp-element * input[type="date"],
+	.tip-jar-wp-element * input[type="datetime"],
+	.tip-jar-wp-element * input[type="datetime-local"],
+	.tip-jar-wp-element * input[type="email"],
+	.tip-jar-wp-element * input[type="month"],
+	.tip-jar-wp-element * input[type="number"],
+	.tip-jar-wp-element * input[type="password"],
+	.tip-jar-wp-element * input[type="search"],
+	.tip-jar-wp-element * input[type="tel"],
+	.tip-jar-wp-element * input[type="text"],
+	.tip-jar-wp-element * input[type="time"],
+	.tip-jar-wp-element * input[type="url"],
+	.tip-jar-wp-element * input[type="week"],
+	.tip-jar-wp-element * select:focus,
+	.tip-jar-wp-element * textarea,
+	.tip-jar-wp-element .ElementsApp, .ElementsApp .InputElement {
+		font-size: 19px!important;
+	}
+}
+.tip-jar-wp-element *{
+	font-family: sans-serif;
+	text-transform: none;
+}
+.tip-jar-wp-element > *{
+	width:100%;
+	max-width: 900px!important;
+	margin: 0px auto;
+}
+.tip-jar-wp-element{
+	width:100%;
+}
+.tip-jar-wp-element, .tip-jar-wp-element * {
+	box-sizing:border-box;
+	white-space: pre-line;
+}
+.tip-jar-wp-hidden-view {
+	display:none;
+	opacity:0;
+}
+.tip-jar-wp-element-json{
+	display:none;
+}
+
+@keyframes tip-jar-wp-fade-in-up {
+	from {
+		transform: translate3d(0,2px,0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+@-webkit-keyframes tip-jar-wp-fade-in-up {
+	from {
+		transform: translate3d(0,2px,0);
+		opacity: 0;
+	}
+
+	to {
+		transform: translate3d(0,0,0);
+		opacity: 1;
+	}
+}
+
+.tip-jar-wp-current-view {
+	margin-top:0px!important;
+	-webkit-animation-duration: .5s;
+	animation-duration: .5s;
+	-webkit-animation-name: tip-jar-wp-fade-in-up;
+	animation-name: tip-jar-wp-fade-in-up;
+	overflow:hidden;
+}
+.tip-jar-wp-fancy-container {
+	filter: drop-shadow(0px 2px 2px rgba(34,36,38,.15));
+	-webkit-filter: drop-shadow(0px 2px 2px rgba(34,36,38,.15));
+	position:relative;
+}
+.tip-jar-wp-fancy-container.tip-jar-wp-current-view.tip-jar-wp-has-featured-media{
+	 margin: -38px 0px 0px 0px !important;
+}
+
+/* The Payment View */
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-component-box{
+	width: 100%;
+	box-sizing: border-box;
+	color: #333;
+	background-color: #f5f5f7;
+	border-radius: 6px;
+	text-align:left;
+	border: 1px solid rgba(0,0,0,.1);
+
+	z-index: 2147481000;
+
+	transition-delay: .001s;
+	transition: all 300ms ease-in-out,-webkit-transform 300ms ease-in-out;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-box-view {
+	padding:36px;
+}
+@media only screen and (max-width: 600px) {
+	.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-box-view {
+		padding:15px;
+	}
+}
+.tip-jar-wp-featured-media-container{
+	width: 85%;
+	margin: 0px auto;
+	z-index: 1;
+	position: relative;
+}
+.tip-jar-wp-featured-media{
+	top: 0px;
+	right: 0;
+	left: 0;
+	margin: 2px auto;
+	z-index: 1;
+	border-radius:6px;
+	background-color: #000000;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.18), 0 2px 2px 0 rgba(0,0,0,.08);
+	padding: 56.2% 0px 0px;
+	width: 100%;
+	height: 100%;
+}
+.tip-jar-wp-featured-media iframe {
+	position: absolute;
+	border: 0px;
+	border-radius: 6px 6px 0px 0px;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+.tip-jar-wp-featured-media iframe{
+	border-radius:6px;
+}
+.tip-jar-wp-header-logo{
+	width: 100%;
+	height: 70px;
+	z-index: 999999;
+	top: 0px;
+}
+.tip-jar-wp-header-logo-container{
+	position:relative;
+	top: 0px;
+	right: 0;
+	left: 0;
+	width: 70px;
+	height: 70px;
+	margin: 2px auto;
+	z-index:1;
+}
+.tip-jar-wp-header-logo-inner-bevel{
+	border: 1px solid rgba(0,0,0,.2);
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	box-shadow: inset 0 1px 0 0 hsla(0,0%,100%,.1);
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	z-index:2;
+}
+.tip-jar-wp-header-logo-img{
+	border: 3px solid #fff;
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.18), 0 2px 2px 0 rgba(0,0,0,.08);
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index:1;
+	background-size: cover;
+	background-position: center;
+	clip-path: circle(100%);
+	background-color: #ffffff;
+}
+.Header-logoWrap{
+	position: absolute;
+	top: 0px;
+	right: 0;
+	left: 0;
+	width: 70px;
+	height: 70px;
+	margin: 2px auto;
+}
+.Header-logoBevel {
+	border: 1px solid rgba(0,0,0,.2);
+	width: 64px;
+	height: 64px;
+	border-radius: 100%;
+	box-shadow: inset 0 1px 0 0 hsla(0,0%,100%,.1);
+	position: absolute;
+	top: 3px;
+	left: 3px;
+}
+.Header-logoBorder {
+	border: 3px solid #fff;
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	box-shadow: 0 0 0 1px rgba(0,0,0,.18), 0 2px 2px 0 rgba(0,0,0,.08);
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.Header-logoImage{
+	background: #fff;
+	width: 64px;
+	height: 64px;
+	margin: 3px;
+	border-radius: 100%;
+	background-position: 50% 50%;
+	background-size: cover;
+	display: inline-block;
+}
+.Header-logoImageCatchError{
+	display:none;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header{
+	position:relative;
+	background-color: #e8e9eb;
+	border-bottom: 1px solid #d9d9d9;
+	padding:25px;
+	border-radius: 6px 6px 0px 0px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header{
+	padding: 25px 10px 25px 10px;
+	text-align:center;
+	display:grid;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container.tip-jar-wp-has-featured-media .tip-jar-wp-header{
+	padding: 50px 10px 25px 10px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header h1 {
+	margin: 0 auto;
+	display:inline-block;
+	vertical-align: top;
+	font-size: 18px;
+	line-height: 1.5;
+	font-weight: 700;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header h1:before{
+	all: unset;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header > * {
+	margin: 0 auto;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header h2,
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header .tip-jar-wp-header-media {
+	display:inline-block;
+	vertical-align: top;
+	line-height:1.5;
+	font-size: 15px;
+	font-weight: 500;
+	color: #5b5b65;
+	text-shadow: 0 1px 0 #fff;
+	padding: 10px 0px 6px 0px;
+	max-width:80%;
+	text-align:center;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-header h2:before{
+	all: unset;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-close-btn{
+	cursor: pointer;
+	position:absolute;
+	top:5px;
+	right:5px;
+	width: 19px;
+	height:19px;
+	line-height:0px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-close-btn img{
+	width: 18px;
+	height: 19px;
+	opacity:1;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-input-instruction {
+	width: 100%;
+	color: #6f6f76;
+	text-shadow: 0 1px 0 hsla(0,0%,100%,.4);
+	vertical-align: top;
+	font-size:15px;
+	text-transform: unset;
+	margin-bottom: 5px;
+}
+.tip-jar-wp-cc-form.tip-jar-wp-mobile .tip-jar-wp-input-instruction{
+	overflow: hidden;
+	white-space: nowrap;
+}
+.tip-jar-wp-payment-form-container {
+	text-align:left;
+	border-top: 1px solid #ffffff;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field-container:first-child .tip-jar-wp-payment-field{
+	padding-top:0px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field-container .tip-jar-wp-payment-field{
+	padding-top:20px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-instruction-error{
+	color: #fa755a;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-amount-container{
+		display:grid;
+		grid-auto-columns: min-content min-content auto;
+		column-gap: 0px;
+		row-gap: 0px;
+		justify-items: stretch;
+		padding:0px;
+		background-color: #ffffff;
+		border-radius: 4px;
+		border: 1px solid #d4d4d4;
+		width: min-content;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-amount-container.currency-search-visible {
+	width:100%;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-amount-container > div:nth-child(1){
+	grid-column: 1;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-amount-container > div:nth-child(2){
+	grid-column: 2;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-amount-container > div:nth-child(3){
+	grid-column: 3;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field input.tip-jar-wp-tip-amount-input {
+	width:80px;
+	border:none;
+	background:none;
+	padding: 0px 10px 0px 10px;
+	box-shadow: none;
+}
+@media only screen and (max-width: 600px) {
+	.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field input.tip-jar-wp-tip-amount-input {
+		width:65px;
+	}
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field input.tip-jar-wp-tip-amount-input:focus {
+	outline: none;
+	box-shadow: none!important;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-tip-currency-symbol{
+	font-size:15px;
+	padding: 10px;
+	background-color: #f5f5f7;
+	border-right: 1px solid #d4d4d4;
+	border-radius: 4px 0px 0px 4px;
+	place-self: stretch;
+	display: flex;
+	align-items: center;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-tip-amount-input-container {
+	place-self: stretch;
+	display: flex;
+	align-items: center;
+	box-shadow: inset 1px 1px 2px #0000000d;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-currency-switcher{
+	display:grid;
+	justify-items: stretch;
+	font-size:15px;
+	white-space: nowrap;
+	line-height:1;
+	color: #6f6f76;
+	background-color: #f5f5f7;
+	border-left: 1px solid #d4d4d4;
+	border-radius: 0px 4px 4px 0px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-currency-switcher .tip-jar-wp-tip-currency-code-toggle-btn {
+	font-size:15px;
+	white-space: nowrap;
+	line-height:1;
+	color: #6f6f76;
+	padding: 0px;
+	background-color: #f5f5f7;
+	border: none;
+	border-radius: 0px 4px 4px 0px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-currency-switcher .tip-jar-wp-tip-currency-code {
+	display:grid;
+	justify-items: stretch;
+	grid-template-columns: min-content auto;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-tip-currency-flag-container{
+	padding:10px;
+	grid-column: 1;
+	place-self: center;
+	width: 52px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-tip-currency-text-container{
+	grid-column: 2;
+	align-self: center;
+	padding:10px 10px 10px 0px;
+	text-align:left;
+	white-space: nowrap;
+	word-break: keep-all;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field .tip-jar-wp-tip-currency-flag{
+	width:32px;
+	height:32px;
+	background-size: 512px;
+	margin:0!important;
+	opacity:1;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-buttons-container .tip-jar-wp-radio-button-container{
+	box-shadow: none;
+	font-size: 15px;
+	line-height: 18px;
+	text-shadow: 0 1px 0 #fff;
+	color: #000!important;
+	text-decoration: none!important;
+	box-shadow: inset 0 0px 1px 0 #ffffff, 0 1px 0 0 #ffffff;
+	border-radius: 4px;
+	border: 1px solid #d4d4d4;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-button-container.tip-jar-wp-radio-current{
+	box-shadow: none;
+	font-size: 15px;
+	line-height: 18px;
+	text-shadow: 0 1px 0 #fff;
+	color: #000!important;
+	text-decoration: none!important;
+	cursor: pointer;
+	box-shadow: inset 0 0px 1px 0 hsla(240,1%,49%,.3), 0 1px 0 0 hsla(0,0%,100%,.7)!important;
+	background-color: #f0f0f3;
+	border-radius: 4px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-button-outer{
+	display:block;
+	width:100%;
+	text-align:center;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-button-inner{
+	display:inline-block
+}
+.tip-jar-wp-element label {
+	width:100%!important;
+	display:block!important;
+	margin:0px;
+	font-weight:normal;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-button-container label{
+	padding: 10px;
+	display: flex;
+	cursor: pointer;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-button-container label [type=radio]{
+	vertical-align:baseline;
+}
+@media only screen and (max-width: 600px) {
+	.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-button-container label [type=radio]{
+		vertical-align:middle;
+	}
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-buttons-container{
+	display:grid;
+	column-gap: 15px;
+	row-gap: 15px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-buttons-container .tip-jar-wp-radio-button-container:nth-child(2){
+	grid-column: 2;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-buttons-container .tip-jar-wp-radio-button-container:nth-child(3){
+	grid-column: 1;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-buttons-container .tip-jar-wp-radio-button-container:nth-child(4){
+	grid-column: 2;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-radio-button-after{
+	display: inline-block;
+	margin-left: 5px;
+	font-size:15px;
+	line-height:1;
+	vertical-align:middle;
+	word-break: break-word;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .StripeElement:not( .PaymentRequestButton ),
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container input:not([type=checkbox]):not([type=radio]):not( .tip-jar-wp-tip-amount-input ),
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container textarea {
+	box-shadow: inset 0 1px 1px 0 hsla(240,1%,49%,.3), 0 1px 0 0 hsla(0,0%,100%,.7);
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .StripeElement:not( .PaymentRequestButton ),
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container input:not([type=radio]):not([type=checkbox]):not( .tip-jar-wp-tip-amount-input ),
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container textarea {
+	-webkit-transition: box-shadow 150ms ease;
+	transition: box-shadow 150ms ease;
+	padding: 9px !important;
+	background-color: #ffffff;
+	border-radius: 4px;
+	border: 1px solid #d4d4d4;
+	width:100%;
+	margin:0px;
+}
+/* Stripe CC Form with multiple fields for mobile */
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container  .tip-jar-wp-mobile .tip-jar-wp-cc-multi-field .tip-jar-wp-cc-multi-field-input-area  {
+	position:relative;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container  .tip-jar-wp-mobile .tip-jar-wp-cc-multi-field .StripeElement:not( .PaymentRequestButton ),
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container  .tip-jar-wp-mobile .tip-jar-wp-cc-multi-field input{
+	border-radius: 0px;
+	border-top: 0px;
+	padding-left: 45px !important;
+	font-size:19px!important;
+	line-height:1!important;
+	text-indent: 0!important;
+	box-shadow:none!important;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-mobile .tip-jar-wp-cc-multi-field .tip-jar-wp-cc-multi-field-input-area:first-child .StripeElement:not( .PaymentRequestButton ){
+	border-top: 1px solid #d4d4d4;
+	border-radius: 4px 4px 0px 0px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-mobile .tip-jar-wp-cc-multi-field .tip-jar-wp-cc-multi-field-input-area:last-child input{
+	border-radius: 0px 0px 4px 4px;
+}
+.tip-jar-wp-mobile{
+	position:relative;
+}
+.tip-jar-wp-cc-multi-field .tip-jar-wp-cc-form-icon{
+	position: absolute;
+	width: 48px;
+	z-index:1;
+}
+.tip-jar-wp-cc-multi-field .tip-jar-wp-cc-form-icon.tip-jar-wp-credit-card-icon{
+	top: -4px;
+	left:-1px;
+}
+.tip-jar-wp-cc-multi-field .tip-jar-wp-cc-form-icon.tip-jar-wp-calendar-icon{
+	top: -4px;
+	left:0px;
+}
+.tip-jar-wp-cc-multi-field .tip-jar-wp-cc-form-icon.tip-jar-wp-lock-icon{
+	top: -4px;
+	left:0px;
+}
+.tip-jar-wp-cc-multi-field .tip-jar-wp-cc-form-icon.tip-jar-wp-zipcode-icon{
+	top: -4px;
+	left:0px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-mobile .tip-jar-wp-cc-multi-field .tip-jar-wp-cc-multi-field-input-area .tip-jar-wp-cc-multi-field-input-zip-code{
+	padding-left:45px!important;
+	border-top:0px!important;
+}
+/* End of Stripe CC form multiple fields for mobile */
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field input[type="checkbox"] {
+	width:initial;
+	margin-right: 9px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .StripeElement--focus,
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-field input:focus {
+	box-shadow: 0 1px 3px 0 #bebebe!important;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .StripeElement--invalid,
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-input-error {
+	border-color: #fa755a!important;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .StripeElement--complete,
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-input-success {
+	border-color: #21da38!important;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .StripeElement--webkit-autofill{
+	background-color: #fefde5 !important;
+}
+
+.tip-jar-wp-element input{
+	border-radius:4px;
+	padding: 9px;
+	font-size: 15px;
+	color: #000;
+	margin: 0px;
+}
+.tip-jar-wp-element .tip-jar-wp-text-button,
+.tip-jar-wp-element .tip-jar-wp-text-button:hover,
+.tip-jar-wp-element .tip-jar-wp-text-button:focus{
+	background:none!important;
+	text-decoration:underline!important;
+	display: inline-block!important;
+	padding: 0px;
+	border: 0!important;
+	width:auto!important;
+}
+.tip-jar-wp-pay-button,
+.tip-jar-wp-receipt-line-item-action{
+	position: relative;
+	padding:0;
+	border-radius: 4px;
+	background-color: #3ea8e5;
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#44b1e8),to(#3098de));
+	background-image: -webkit-linear-gradient(top,#44b1e8,#3098de);
+	background-image: linear-gradient(-180deg,#44b1e8,#3098de);
+	box-shadow: 0 1px 0 0 rgba(46,86,153,.15), inset 0 1px 0 0 rgba(46,86,153,.1), inset 0 -1px 0 0 rgba(46,86,153,.4);
+	font-size: 17px;
+	line-height: 21px;
+	height: 37px;
+	font-weight: 700;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+	color: #fff;
+	cursor: pointer;
+	-webkit-transition: all .2s ease-in-out;
+	transition: all .2s ease-in-out;
+	width:100%;
+	border:0;
+}
+
+.tip-jar-wp-expandable-terms{
+	margin-bottom:10px;
+}
+.tip-jar-wp-terms-body{
+	box-shadow: 0 1px 3px 0 #e6ebf1;
+	-webkit-transition: box-shadow 150ms ease;
+	transition: box-shadow 150ms ease;
+	padding: 13px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	border: 1px solid #d4d4d4;
+	width: 100%;
+}
+
+.tip-jar-wp-payment-error-message{
+	box-shadow: 0 1px 3px 0 #e6ebf1;
+	-webkit-transition: box-shadow 150ms ease;
+	transition: box-shadow 150ms ease;
+	padding: 13px;
+	background-color: #ffffff;
+	border-radius: 4px;
+	width: 100%;
+	border: #fa755a solid 1px;
+	color: #fa755a;
+	font-size:15px;
+}
+.top-jar-wp-alternate-actions{
+	padding-top:20px;
+}
+.top-jar-wp-alternate-actions-separator{
+	padding:0px 5px;
+	line-height: 1;
+	color: #6f6f76;
+	vertical-align:top;
+}
+
+/* Payment Confirmation Area */
+.tip-jar-wp-confirmation-note{
+	margin-top:20px;
+}
+.tip-jar-wp-note-with-tip{
+	width:85%;
+}
+
+/* Receipt */
+.tip-jar-wp-receipt {
+	margin: 30px 0px 0px 0px;
+}
+.tip-jar-wp-receipt-title, .tip-jar-wp-file-download-instructions-title {
+	font-size: 17px;
+	line-height: 18px;
+	font-weight: 700;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+}
+.tip-jar-wp-receipt-field-space-below{
+	margin-bottom:15px;
+}
+.tip-jar-wp-receipt-line-item-title {
+	margin: 0;
+	line-height: 18px;
+	font-weight: 700;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+}
+.tip-jar-wp-receipt-line-item-value{
+	display:inline-block;
+}
+.tip-jar-wp-arrangement-id {
+	margin-top:15px;
+}
+.tip-jar-wp-arrangement-actions{
+	margin-top:15px;
+}
+.tip-jar-wp-inline-card{
+	display:grid;
+	border-radius: 4px;
+	border: 1px solid #d4d4d4;
+	padding:0px;
+	column-gap:5px;
+	box-shadow: inset 0 0px 1px 0 hsla(240,1%,49%,.3), 0 1px 0 0 hsla(0,0%,100%,.7) !important;
+	background-color: #f0f0f3;
+	align-items:center;
+}
+.tip-jar-wp-card-icon{
+	grid-column:1;
+	width:20px;
+	height:20px;
+	vertical-align: sub;
+	box-shadow: inset 0 0px 1px 0 hsla(240,1%,49%,.3), 0 1px 0 0 hsla(0,0%,100%,.7) !important;
+	background-color: #f0f0f3;
+	margin-left:5px;
+}
+.tip-jar-wp-inline-card-number{
+	grid-column:2;
+	margin-right:5px;
+}
+.tip-jar-wp-inline-update-button{
+	grid-column:3;
+}
+.tip-jar-wp-element .tip-jar-wp-inline-update-button > button,
+.tip-jar-wp-element .tip-jar-wp-inline-update-button > button:hover,
+.tip-jar-wp-element .tip-jar-wp-inline-update-button > button:focus{
+	box-shadow: none;
+	background-color: #f5f5f7;
+	padding: 5px;
+	border-radius: 0px 4px 4px 0px;
+	box-shadow: none;
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 700;
+	text-shadow: 0 1px 0 #fff;
+	color: #000!important;
+	text-decoration:none;
+	border-left: 1px solid #d4d4d4;
+}
+.tip-jar-wp-element .tip-jar-wp-email-receipt,
+.tip-jar-wp-element .tip-jar-wp-receipt-action-button {
+	margin: 20px 0px 0px 0px;
+}
+.tip-jar-wp-element .tip-jar-wp-print-receipt{
+	margin: 10px 0px 10px 0px;
+}
+.tip-jar-wp-back-button-container{
+	margin-bottom:20px;
+}
+
+/* Remove shadows when printing because of a chrome bug: https://bugs.chromium.org/p/chromium/issues/detail?id=174583 */
+@media print {
+	.tip-jar-wp-element * {
+		text-shadow: none!important;
+		transition: none!important;
+		box-shadow: none!important;
+		filter: none !important;
+		-webkit-filter: none !important;
+	}
+	.tip-jar-wp-element .tip-jar-wp-email-receipt,
+	.tip-jar-wp-element .tip-jar-wp-print-receipt,
+	.tip-jar-wp-element .tip-jar-wp-confirmation-note,
+	.tip-jar-wp-element .tip-jar-wp-manage-payments-button {
+		display:none;
+	}
+}
+.tip-jar-wp-print-page .tip-jar-wp-element .tip-jar-wp-print-receipt,
+.tip-jar-wp-print-page .tip-jar-wp-element .tip-jar-wp-confirmation-note {
+	display:none;
+}
+
+/* CSS Spinner from http://tobiasahlin.com/spinkit/ */
+.tip-jar-wp-spinner-container{
+	width:100%;
+	height:100%;
+	text-align:center;
+}
+.tip-jar-wp-pay-button .tip-jar-wp-spinner-container{
+	display:inline;
+}
+.tip-jar-wp-spinner {
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	position: relative;
+	vertical-align: middle;
+}
+
+.tip-jar-wp-double-bounce1, .tip-jar-wp-double-bounce2 {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #FFFFFF;
+	opacity: 0.6;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-animation: tip-jar-wp-sk-bounce 2.0s infinite ease-in-out;
+	animation: tip-jar-wp-sk-bounce 2.0s infinite ease-in-out;
+}
+
+.tip-jar-wp-double-bounce2 {
+	-webkit-animation-delay: -1.0s;
+	animation-delay: -1.0s;
+}
+
+@-webkit-keyframes tip-jar-wp-sk-bounce {
+	0%, 100% { -webkit-transform: scale(0.0) }
+	50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes tip-jar-wp-sk-bounce {
+	0%, 100% {
+		transform: scale(0.0);
+		-webkit-transform: scale(0.0);
+	} 50% {
+		transform: scale(1.0);
+		-webkit-transform: scale(1.0);
+	}
+}
+
+.tip-jar-wp-spinner-dark .tip-jar-wp-double-bounce1,
+.tip-jar-wp-spinner-dark .tip-jar-wp-double-bounce2 {
+	background-color: #aaaaaa;
+}
+/* END of CSS Spinner */
+
+/* CSS Checkmark from https://codepen.io/deepsurface/pen/XzWayo */
+@keyframes tip-jar-wp-checkmark-scale {
+	0% {
+		transform: scale3d(0.5, 0.5, 1);
+		opacity: 0;
+	}
+	70% {
+		transform: scale3d(1.1, 1.1, 1);
+	}
+	100% {
+		transform: scale3d(1, 1, 1);
+		opactiy: 100;
+	}
+}
+.tip-jar-wp-checkmark-svg {
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	vertical-align: middle;
+	transform: scale3d(0.5, 0.5, .5);
+	animation: opacity 0.1s, tip-jar-wp-checkmark-scale .1s ease-in-out 0s forwards;
+}
+@keyframes tip-jar-wp-checkmark-stroke {
+	100% {
+		stroke-dashoffset: 0;
+	}
+}
+.tip-jar-wp-checkmark--check {
+	stroke: #FFF;
+	stroke-width: 25;
+	stroke-dasharray: 200;
+	stroke-dashoffset: 200;
+	animation: tip-jar-wp-checkmark-stroke .2s cubic-bezier(0.650, 0.000, 0.450, 1.000) .2s forwards;
+}
+/* END of CSS Checkmark */
+
+/* Customer's List View Styles */
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-payment-box-view,
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view{
+	width: 100%;
+	color: #6f6f76;
+	text-shadow: 0 1px 0 hsla(0,0%,100%,.4);
+	vertical-align: top;
+	font-size: 15px;
+	overflow-x: hidden;
+}
+.tip-jar-wp-login-form * {
+	width:100%;
+}
+.tip-jar-wp-login-code-fields {
+	display:grid;
+	column-gap: 10px;
+}
+.tip-jar-wp-login-code-fields > * {
+	text-align:center;
+	place-self: center;
+	align-items: center;
+	width:100%;
+}
+.tip-jar-wp-login-code-fields > input:nth-child(1) {
+	grid-column:1;
+}
+.tip-jar-wp-login-code-fields > input:nth-child(2) {
+	grid-column:2;
+}
+.tip-jar-wp-login-code-fields > input:nth-child(3) {
+	grid-column:3;
+}
+.tip-jar-wp-login-code-fields > div:nth-child(4) {
+	grid-column:4;
+}
+.tip-jar-wp-login-code-fields > input:nth-child(5) {
+	grid-column:5;
+}
+.tip-jar-wp-login-code-fields > input:nth-child(6) {
+	grid-column:6;
+}
+.tip-jar-wp-login-code-fields > input:nth-child(7) {
+	grid-column:7;
+}
+.tip-jar-wp-login-success{
+	text-align:center;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-payments-nav{
+	text-align:center;
+	display:grid;
+	grid-auto-columns: min-content;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-payments-nav-container-full{
+	width:100%;
+	text-align:center;
+	padding-bottom: 20px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-payments-nav-container-center{
+	display:inline-block;
+	-webkit-transition: box-shadow 150ms ease;
+  transition: box-shadow 150ms ease
+  background-color: #ffffff;
+  border-radius: 4px;
+  border: 1px solid #d4d4d4;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-nav-current-btn{
+	box-shadow: inset 0 0px 1px 0 hsla(240,1%,49%,.3), 0 1px 0 0 hsla(0,0%,100%,.7)!important;
+	background-color:#f0f0f3;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-payments-nav > *:first-child button{
+	border-top-left-radius:4px;
+	border-bottom-left-radius:4px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-payments-nav > *:last-child button{
+	border-top-right-radius:4px;
+	border-bottom-right-radius:4px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-payments-nav > * {
+	grid-row: 1;
+	white-space: nowrap;
+	box-shadow: none;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-manage-payments-view .tip-jar-wp-manage-payments-nav > * button{
+	white-space: nowrap;
+	padding: 14px;
+	box-shadow: none;
+
+	font-size: 13px;
+	line-height: 18px;
+	font-weight: 700;
+	text-shadow: 0 1px 0 #fff;
+	color: #000!important;
+	text-decoration: none!important;
+	cursor: pointer;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-pagination{
+	max-width: 160px;
+	display: inline-block;
+	float: right;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-pagination span:first-child{
+	margin-right:5px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-pagination span:nth-child(3){
+	margin-left:5px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-items-per-page{
+	width: 50%;
+	display: inline-block;
+	float: left;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-items-per-page span{
+	padding-right:5px;
+	display:inline-block;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-pagination-controls .tip-jar-wp-list-view-pagination input{
+	width:50px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-pagination-controls .tip-jar-wp-list-view-items-per-page input{
+	width:40%;
+}
+
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-table{
+	display:table;
+	table-layout: fixed;
+	width:100%;
+	border: 1px solid #d4d4d4;
+	border-radius: 4px;
+	-webkit-transition: box-shadow 150ms ease;
+	transition: box-shadow 150ms ease;
+	box-shadow: inset 0 1px 1px 0 hsla(240,1%,49%,.3), 0 1px 0 0 hsla(0,0%,100%,.7);
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-table-header{
+	display:table-header-group;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-header-row{
+	display:table-row;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-body{
+	display:table-row-group;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-column{
+	display: table-cell;
+	padding:5px;
+	text-align:center;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-cell{
+	display: table-cell;
+	padding:5px;
+	text-align:center;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-cell button{
+	color: #4a4a4e;
+	vertical-align: middle;
+	font-weight: normal;
+	font-size: 13px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-row:last-child .tip-jar-wp-list-view-cell:first-child{
+		border-bottom-left-radius: 4px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-row:last-child .tip-jar-wp-list-view-cell:last-child{
+		border-bottom-right-radius: 4px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-row{
+	display:table-row;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-row:nth-child(even){
+	background-color:#ffffff;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-row:nth-child(odd){
+	background-color:#ffffff8c;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-before-controls{
+	margin-bottom:20px;
+}
+.tip-jar-wp-element .tip-jar-wp-container .tip-jar-wp-fancy-container .tip-jar-wp-list-view-after-controls{
+	margin-top:20px;
+}
+/* End Customer's List View Styles */
+
+/* Modal Styles */
+.tip-jar-wp-modal{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	opacity:0;
+	z-index: 0;
+}
+.tip-jar-wp-modal.tip-jar-wp-modal-closed{
+	display:none;
+}
+.tip-jar-wp-modal.tip-jar-wp-modal-open{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	opacity:1;
+	z-index: 99999;
+
+	overflow:scroll;
+	-webkit-overflow-scrolling: touch;
+
+}
+.tip-jar-wp-modal-outside-click-to-close {
+	position:absolute;
+	width:100%;
+	height:100%;
+	top:0px;
+	left:0px;
+}
+.tip-jar-wp-modal-background{
+	background-color: rgba(0, 0, 0, 0.6);
+	width: 100%;
+	height: 100%;
+}
+.tip-jar-wp-modal-relative{
+	position: absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+}
+.tip-jar-wp-modal-absolute{
+	position: absolute;
+	top: 0px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+}
+.tip-jar-wp-modal-inner{
+	display: inline-block;
+	text-align:center;
+	max-width: 600px;
+	padding: 20px;
+	margin-top:50px;
+	width:100%;
+
+	border-radius:4px;
+	filter: drop-shadow(0px 0px 20px rgba(34,36,38));
+	-webkit-filter: drop-shadow(0px 0px 20px rgba(34,36,38));
+}
+/* End of Modal Styles */
+
+/* Editing Styles - (EG: Gutenberg) */
+.tip-jar-wp-edit-button-container {
+	position: relative;
+	overflow: visible;
+	z-index: 999;
+	display: inline-block;
+	vertical-align: text-top;
+}
+.tip-jar-wp-edit-button-container-absolute{
+	position:absolute;
+	top:0px;
+	left:0px;
+}
+
+.tip-jar-wp-edit-container{
+	position: relative;
+	display: inline-block;
+	padding: 30px 10px 10px 10px;
+	border: 1px solid #d4d4d4;
+	border: 1px solid #f0b849;
+	border-radius: 4px;
+	margin: 3px 0px;
+	min-width:100px;
+}
+.tip-jar-wp-edit-container > *:nth-child(2):last-child:not(textarea) {
+	margin-top:0!important;
+	padding-top:0px!important;
+	margin-bottom:0!important;
+	padding-bottom:0px!important;
+}
+.tip-jar-wp-edit-container-admin-only, .tip-jar-wp-edit-area-in-focus{
+	position: relative;
+	border: 1px solid #f0b849;
+	border-radius: 4px;
+	margin: 3px 0px;
+	width: 100%;
+	background-color: #fef8ee;
+	font-size: 15px;
+}
+.tip-jar-wp-edit-container-admin-only-header{
+	position: relative;
+	border-bottom: 1px solid #f0b849;
+	border-radius: 4px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+	padding: 10px;
+	min-width: 100px;
+	background-color: #fef8ee;
+	font-size: 15px;
+}
+.tip-jar-wp-edit-container-admin-only-body{
+	position: relative;
+	padding: 10px;
+	min-width: 100px;
+	font-size: 15px;
+}
+.tip-jar-wp-edit-container-admin-only-title{
+	margin-right:10px;
+	font-weight:600;
+}
+.tip-jar-wp-edit-container-admin-only-setting:not(:first-child){
+	margin-top:10px;
+}
+.tip-jar-wp-edit-container-admin-only-setting-title{
+	font-weight:600;
+}
+.tip-jar-wp-edit-container-admin-only-setting-description{
+
+}
+.tip-jar-wp-edit-container-admin-only-setting-value{
+	position: relative;
+	border: 1px solid #f0b849;
+	border-radius: 4px;
+	padding: 7px;
+	min-width: 100px;
+	background-color: #fffcf6;
+	display: inline-block;
+}
+.tip-jar-wp-edit-container-admin-only textarea,
+.tip-jar-wp-edit-container > textarea{
+	min-width: 300px;
+	width:100%;
+}
+.tip-jar-wp-edit-container .tip-jar-wp-edit-button-container{
+	position: absolute;
+	white-space: nowrap;
+	top: -1px;
+	left: -1px;
+}
+.tip-jar-wp-edit-container-admin-only .tip-jar-wp-edit-button-container{
+	position: absolute;
+	white-space: nowrap;
+	top: 1px;
+	left: 1px;
+}
+.tip-jar-wp-top-media-type-editor .tip-jar-wp-edit-button-container{
+	position:relative!important;
+}
+.tip-jar-wp-edit-button-container .tip-jar-wp-edit-button:nth-child(2) {
+	margin-left:5px;
+}
+.tip-jar-wp-edit-button,
+.tip-jar-wp-view-button {
+	position: relative;
+	left: 0%;
+	border: 1px solid #f0b849!important;
+	box-shadow: none!important;
+}
+.tip-jar-wp-terms-edit-container{
+	display:inline-block;
+	vertical-align:top;
+}
+.tip-jar-wp-shortcode-insert-area .tip-jar-wp-cancel-shortcode{
+	margin-left:5px;
+}
